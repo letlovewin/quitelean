@@ -11844,5 +11844,33 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  user-select: none;
+}
+
+a {
+  user-select: none;
+  text-decoration: none;
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+body {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.error {
+  color: #dc3545;
+}
+
+.subtext {
+  font-size: smaller;
+}
+
+.navbar-color {
+  background-color: #FFFFFF;
+}
 
 /*# sourceMappingURL=global.css.map */
