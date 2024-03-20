@@ -179,6 +179,7 @@
             </div>
         </div>
     {:else}
+        <Navigation />
         {#key competitiveUserInformation}
             <div class="container text-center p-5">
                 <h1>Welcome, {currentUserInformation.displayName}!</h1>
@@ -187,6 +188,5 @@
                 </p>
             </div>
         {/key}
-        <Navigation />
     {/if}
 {/key}

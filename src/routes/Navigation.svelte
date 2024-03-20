@@ -1,7 +1,9 @@
 <script>
+    /*
+        Navbar component, only shows when user is logged in
+    */
     import { getApp } from "firebase/app";
     import { getAuth, signOut } from "firebase/auth";
-    import { getContext, setContext } from "svelte";
     import { browser } from "$app/environment";
     import { goto } from "$app/navigation";
     const app = getApp();

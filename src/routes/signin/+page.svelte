@@ -1,17 +1,11 @@
 <svelte:options accessors={true} />
 
 <script>
+    import { goto } from "$app/navigation";
+    import { browser } from "$app/environment";
     import Auth from "../Auth.svelte";
 
-    const webAppRenderStates = {
-        unauthorized: "unauthorized",
-        unauthorizedSignIn: "unauthorized-signin",
-        unauthorizedSignUp: "unauthorized-signup",
-        authorizedHome: "authorized-home",
-    };
-
-    let webAppRenderState,
-        webAppAuthComponent,
+    let webAppAuthComponent,
         webAppTitleState = "QuiteLean",
         currentUserInformation,
         competitiveUserInformation,
@@ -20,7 +14,7 @@
         signIn,
         authErrorState;
 
-    let emailInputField, passwordInputField, usernameInputField;
+    let emailInputField, passwordInputField;
 </script>
 
 <svelte:head>
@@ -39,7 +33,6 @@
     bind:signUp
     bind:signIn
     bind:authErrorState
-    bind:webAppRenderState
     bind:competitiveUserInformation
 />
 
@@ -96,7 +89,9 @@
             class="btn btn-outline-secondary rounded-circle position-absolute top-0 start-0 m-2"
             on:click={() => {
                 authErrorState = "";
-                webAppRenderState = webAppRenderStates.unauthorized;
+                if(browser) {
+                    goto('/');
+                }
             }}
             ><svg
                 xmlns="http://www.w3.org/2000/svg"

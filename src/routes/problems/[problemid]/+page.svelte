@@ -2,7 +2,7 @@
 
 <script>
     import { initializeApp, getApp, getApps } from "firebase/app";
-    import { getDatabase, ref, onValue, get, child } from "firebase/database";
+    import { getDatabase, ref, get, child } from "firebase/database";
     import { goto } from "$app/navigation";
     import { browser } from "$app/environment";
     import Auth from "../../Auth.svelte";

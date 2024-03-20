@@ -32,7 +32,7 @@
   export let firebaseApp,
     firebaseAuth,
     firebaseDatabase,
-    currentUserInformation = undefined,
+    currentUserInformation = null,
     authErrorState = "",
     userAuthState,
     competitiveUserInformation = {elo:"NILL"};
