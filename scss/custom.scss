@@ -1,7 +1,9 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
 
 p,h1,h2,h3,h4,h5,h6 {
     user-select: none;
+    font-family: "Fraunces", serif;
 }
 
 a {
@@ -23,6 +25,10 @@ body {
  
 .subtext {
     font-size: smaller;
+}
+
+.subsubtext {
+    font-size: x-small;
 }
 
 .navbar-color {

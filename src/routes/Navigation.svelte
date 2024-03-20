@@ -20,23 +20,26 @@
     <input
         type="image"
         src={"/icon.png"}
-        alt="Lambda symbol in pink"
+        alt="The QuiteLean Icon"
         style="width:50px;height:50px"
         class="mt-2"
-        on:click={(webAppRenderState = "authorized-home")}
+        on:click={()=>{window.location = '/'}}
     />
+    <p class="subsubtext">QuiteLean</p>
     <br />
-    <div
+    <div 
         class="btn-group dropend position-absolute bottom-0 start-50 translate-middle-x"
     >
         <input
             type="image"
             src={"/list.svg"}
+            style="width:35px;height:35px"
             alt="Menu icon"
             class="mb-3"
             data-bs-toggle="dropdown"
             aria-expanded="false"
         />
+        
         <ul class="dropdown-menu">
             <li>
                 <button class="btn btn-sm" on:click={logOut}>Sign out</button>
@@ -54,7 +57,7 @@
         type="image"
         src={"/icon.png"}
         alt="Lambda symbol in pink"
-        style="width:30px;height:30px;margin-top:10px;"
+        style="width:40px;height:40px;margin-top:10px;"
         class="ms-1"
         on:click={(webAppRenderState = "authorized-home")}
     />
@@ -64,7 +67,7 @@
             src={"/list.svg"}
             alt="Menu icon"
             class="me-2"
-            style="margin-top:10px;"
+            style="margin-top:10px;height:25px;width:25px;"
             data-bs-toggle="dropdown"
             aria-expanded="false"
         />

@@ -4,6 +4,7 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11846,6 +11847,7 @@ textarea.form-control-lg {
 }
 p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   user-select: none;
+  font-family: "Fraunces", serif;
 }
 
 a {
@@ -11869,8 +11871,10 @@ body {
   font-size: smaller;
 }
 
+.subsubtext {
+  font-size: x-small;
+}
+
 .navbar-color {
   background-color: #FFFFFF;
 }
-
-/*# sourceMappingURL=global.css.map */
