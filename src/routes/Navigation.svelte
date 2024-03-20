@@ -2,14 +2,14 @@
     import { getApp } from "firebase/app";
     import { getAuth, signOut } from "firebase/auth";
     import { getContext, setContext } from "svelte";
+    import { browser } from "$app/environment";
+    import { goto } from "$app/navigation";
     const app = getApp();
     const auth = getAuth(app);
 
     function logOut() {
         signOut(auth);
     }
-
-    export let webAppRenderState;
 </script>
 
 <div
@@ -23,7 +23,7 @@
         alt="The QuiteLean Icon"
         style="width:50px;height:50px"
         class="mt-2"
-        on:click={()=>{window.location = '/'}}
+        on:click={()=>{if(browser){goto('/')}}}
     />
     <p class="subsubtext">QuiteLean</p>
     <br />
@@ -56,10 +56,14 @@
     <input
         type="image"
         src={"/icon.png"}
-        alt="Lambda symbol in pink"
+        alt="QuiteLean Symbol"
         style="width:40px;height:40px;margin-top:10px;"
         class="ms-1"
-        on:click={(webAppRenderState = "authorized-home")}
+        on:click={()=>{
+            if(browser) {
+                goto('/');
+            }
+        }}
     />
     <div class="dropup-center dropup position-absolute mb-1 bottom-0 end-0">
         <input

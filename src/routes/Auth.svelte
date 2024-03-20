@@ -3,29 +3,17 @@
       This is the authentication component for Firebase.
   */
 
-  const webAppRenderStates = {
-    unauthorized: "unauthorized",
-    unauthorizedSignIn: "unauthorized-signin",
-    unauthorizedSignUp: "unauthorized-signup",
-    authorizedHome: "authorized-home",
-  };
   import { getApp, getApps, initializeApp } from "firebase/app";
   import {
     AuthErrorCodes,
-    GoogleAuthProvider,
-    createUserWithEmailAndPassword,
     getAuth,
     onAuthStateChanged,
     signInWithEmailAndPassword,
-    updateProfile,
   } from "firebase/auth";
   import {
     getDatabase,
-    get,
     ref,
-    child,
     onValue,
-    set,
   } from "firebase/database";
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
@@ -44,7 +32,6 @@
   export let firebaseApp,
     firebaseAuth,
     firebaseDatabase,
-    webAppRenderState,
     currentUserInformation = undefined,
     authErrorState = "",
     userAuthState,
@@ -62,18 +49,15 @@
     if (user && user.displayName) {
       userAuthState = true;
       currentUserInformation = user.toJSON();
-      webAppRenderState = webAppRenderStates.authorizedHome;
       const compInfoRef = ref(firebaseDatabase, `users/${user.uid}`);
       onValue(compInfoRef, (snapshot) => {
         competitiveUserInformation = snapshot.val();
-        //console.log(competitiveUserInformation);
       });
     } else {
       userAuthState = false;
       currentUserInformation = null;
-      webAppRenderState = webAppRenderStates.unauthorized;
       if (browser) {
-        if ($page.url.pathname != "/") {
+        if ($page.url.pathname != "/" || $page.url.pathname!="/signup" || $page.url.pathname!="/signin") {
           goto("/");
         }
       }
@@ -88,7 +72,9 @@
     }
     signInWithEmailAndPassword(firebaseAuth, email, password)
       .then((user) => {
-        webAppRenderState = "authorized-home";
+        if(browser) {
+          goto('/');
+        }
       })
       .catch((error) => {
         let code = error.code;
@@ -139,7 +125,9 @@
         } else if (code == "ok") {
           signInWithEmailAndPassword(firebaseAuth, email, password).then(
             (user) => {
-              webAppRenderState = "authorized-home";
+              if(browser) {
+                goto('/');
+              }
             },
           );
         }
