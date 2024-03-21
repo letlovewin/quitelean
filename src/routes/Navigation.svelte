@@ -16,7 +16,7 @@
 
 <div
     class="position-fixed vstack gap-3 border-end top-0 h-100 z-3 navbar-color text-center"
-    style="width:75px;"
+    style="width:100px;"
     id="desktop-navbar"
 >
     <input
@@ -29,6 +29,7 @@
     />
     <p class="subsubtext">QuiteLean</p>
     <br />
+    <button class="btn" style="background-transparency:100%" on:click={()=>{if(browser){goto('/problems/')}}}>Problems</button>
     <div 
         class="btn-group dropend position-absolute bottom-0 start-50 translate-middle-x"
     >
@@ -79,8 +80,12 @@
         />
         <ul class="dropdown-menu">
             <li>
+                <button class="btn btn-sm" on:click={()=>{if(browser){goto('/problems/')}}}>Problems</button>
+            </li>
+            <li>
                 <button class="btn btn-sm" on:click={logOut}>Sign out</button>
             </li>
+            
         </ul>
     </div>
 </div>

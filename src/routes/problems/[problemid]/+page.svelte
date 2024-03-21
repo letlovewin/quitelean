@@ -1,5 +1,3 @@
-<svelte:options accessors={true} />
-
 <script>
     import { initializeApp, getApp, getApps } from "firebase/app";
     import { getDatabase, ref, get, child } from "firebase/database";
@@ -7,15 +5,7 @@
     import { browser } from "$app/environment";
     import Auth from "../../Auth.svelte";
     import Navigation from "../../Navigation.svelte";
-
-    const webAppRenderStates = {
-        unauthorized: "unauthorized",
-        unauthorizedSignIn: "unauthorized-signin",
-        unauthorizedSignUp: "unauthorized-signup",
-        authorizedHome: "authorized-home",
-    };
-    let webAppRenderState,
-        webAppAuthComponent,
+    let webAppAuthComponent,
         webAppTitleState = "QuiteLean",
         currentUserInformation,
         competitiveUserInformation,
@@ -45,12 +35,20 @@
     let pid = data.information.title;
     let statement = "";
     let title = "";
+    let rating = 0;
     get(child(ref(database), `/problems/`)).then((snapshot) => {
         if (snapshot.exists()) {
             if (snapshot.val()[pid] !== "undefined") {
                 let meat = snapshot.val()[pid];
-                statement = meat.statement;
-                title = meat.title;
+                if (meat != undefined) {
+                    statement = meat.statement;
+                    title = meat.title;
+                    rating = meat.rating;
+                } else {
+                    if (browser) {
+                        goto("/");
+                    }
+                }
             } else {
                 if (browser) {
                     goto("/");
@@ -62,18 +60,6 @@
 
 <svelte:head>
     <title>{webAppTitleState}</title>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"
-    ></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script
-        id="MathJax-script"
-        async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    >
-    </script>
 </svelte:head>
 
 <Auth
@@ -83,40 +69,44 @@
     bind:signUp
     bind:signIn
     bind:authErrorState
-    bind:webAppRenderState
     bind:competitiveUserInformation
 />
 
-{#key webAppRenderState}
-    {#if webAppRenderState == webAppRenderStates.authorizedHome}
-        <div class="container">
-            <div class="row p-5">
-                <div class="col-md">
-                    <h3 class="text-center">
-                        <strong>{title}</strong>
-                    </h3>
-                    <hr />
-                    <p>
-                        {statement}
-                    </p>
-                </div>
-                <div class="col-md text-center">
-                    <div class="mb-3">
-                        <textarea
-                            class="form-control"
-                            spellcheck="false"
-                            autocapitalize="false"
-                            autocorrect="false"
-                            rows="15"
-                        ></textarea>
+{#if userAuthState != undefined}
+    {#key userAuthState}
+        {#if userAuthState == true}
+            <div class="container">
+                <div class="row p-5">
+                    <div class="col-md">
+                        <h3 class="text-center">
+                            <strong>{@html title}</strong>
+                        </h3>
+                        <p class="bg-success text-center rounded-pill">Rating: {rating}</p>
+                        <hr />
+                        <p>
+                            {@html statement}
+                        </p>
                     </div>
-                    <button class="btn btn-primary rounded-pill">Submit</button>
+                    <div class="col-md text-center">
+                        <div class="mb-3">
+                            <textarea
+                                class="form-control"
+                                spellcheck="false"
+                                autocapitalize="false"
+                                autocorrect="false"
+                                rows="15"
+                            ></textarea>
+                        </div>
+                        <button class="btn btn-primary rounded-pill"
+                            >Submit</button
+                        >
+                    </div>
                 </div>
             </div>
-        </div>
-        <Navigation bind:webAppRenderState />
-    {/if}
-{/key}
+            <Navigation />
+        {/if}
+    {/key}
+{/if}
 
 <style>
     textarea {

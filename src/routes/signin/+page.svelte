@@ -19,11 +19,6 @@
 
 <svelte:head>
     <title>{webAppTitleState}</title>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"
-    ></script>
 </svelte:head>
 
 <Auth
@@ -36,8 +31,8 @@
     bind:competitiveUserInformation
 />
 
-{#key currentUserInformation}
-    {#if !currentUserInformation}
+{#key userAuthState}
+    {#if userAuthState == false}
         <div
             class="container position-absolute top-50 start-50 translate-middle d-flex justify-content-center text-center"
         >
@@ -48,7 +43,7 @@
                     style="width:150px;height:150px;"
                 />
                 <h3>Sign in</h3>
-                <div class="container vstack gap-1">
+                <div class="container vstack">
                     <div class="input-group mb-3">
                         <input
                             type="text"
@@ -75,6 +70,9 @@
                             }}
                         />
                     </div>
+                    <!--
+<button class="btn text-secondary" style="background-transparency:100%">Forgot password</button>
+                    -->
                 </div>
                 <button
                     class="btn btn-primary rounded-pill"
@@ -82,6 +80,7 @@
                         signIn(emailInputField.value, passwordInputField.value);
                     }}>Sign in</button
                 >
+
                 <p class="error my-2">{authErrorState}</p>
             </div>
         </div>
@@ -89,8 +88,8 @@
             class="btn btn-outline-secondary rounded-circle position-absolute top-0 start-0 m-2"
             on:click={() => {
                 authErrorState = "";
-                if(browser) {
-                    goto('/');
+                if (browser) {
+                    goto("/");
                 }
             }}
             ><svg

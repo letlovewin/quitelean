@@ -10,11 +10,7 @@
     onAuthStateChanged,
     signInWithEmailAndPassword,
   } from "firebase/auth";
-  import {
-    getDatabase,
-    ref,
-    onValue,
-  } from "firebase/database";
+  import { getDatabase, ref, onValue } from "firebase/database";
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import { browser } from "$app/environment";
@@ -35,7 +31,7 @@
     currentUserInformation = null,
     authErrorState = "",
     userAuthState,
-    competitiveUserInformation = {elo:"NILL"};
+    competitiveUserInformation = { elo: "NILL" };
 
   if (getApps().length === 0) {
     firebaseApp = initializeApp(firebaseConfig);
@@ -47,6 +43,12 @@
   firebaseDatabase = getDatabase(firebaseApp);
   onAuthStateChanged(firebaseAuth, (user) => {
     if (user && user.displayName) {
+      if (browser) {
+        if ( $page.url.pathname == "/signup" || $page.url.pathname == "/signin") {
+          goto("/");
+        }
+      }
+
       userAuthState = true;
       currentUserInformation = user.toJSON();
       const compInfoRef = ref(firebaseDatabase, `users/${user.uid}`);
@@ -55,9 +57,14 @@
       });
     } else {
       userAuthState = false;
-      currentUserInformation = null;
+      currentUserInformation = "nouser";
       if (browser) {
-        if ($page.url.pathname != "/" || $page.url.pathname!="/signup" || $page.url.pathname!="/signin") {
+        //console.log($page.url.pathname);
+        if (
+          $page.url.pathname !== "/" &&
+          $page.url.pathname !== "/signup" &&
+          $page.url.pathname !== "/signin"
+        ) {
           goto("/");
         }
       }
@@ -72,8 +79,8 @@
     }
     signInWithEmailAndPassword(firebaseAuth, email, password)
       .then((user) => {
-        if(browser) {
-          goto('/');
+        if (browser) {
+          goto("/");
         }
       })
       .catch((error) => {
@@ -125,8 +132,8 @@
         } else if (code == "ok") {
           signInWithEmailAndPassword(firebaseAuth, email, password).then(
             (user) => {
-              if(browser) {
-                goto('/');
+              if (browser) {
+                goto("/");
               }
             },
           );
