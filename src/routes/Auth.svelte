@@ -9,8 +9,11 @@
     getAuth,
     onAuthStateChanged,
     signInWithEmailAndPassword,
+    setPersistence,
+    browserLocalPersistence,
+    sendEmailVerification
   } from "firebase/auth";
-  import { getDatabase, ref, onValue } from "firebase/database";
+  import { getDatabase, ref, onValue, set, get } from "firebase/database";
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import { browser } from "$app/environment";
@@ -32,7 +35,7 @@
     authErrorState = "",
     userAuthState,
     competitiveUserInformation = { elo: "NILL" };
-
+  //Do all of the heavy lifting in this component and export it to whatever page it might be used in.
   if (getApps().length === 0) {
     firebaseApp = initializeApp(firebaseConfig);
   } else {
@@ -41,6 +44,11 @@
 
   firebaseAuth = getAuth(firebaseApp);
   firebaseDatabase = getDatabase(firebaseApp);
+  
+  //Stop user from being logged out whenever they close the tab
+  setPersistence(firebaseAuth,browserLocalPersistence);
+
+  //Kicks user back to home screen if they aren't logged in basically
   onAuthStateChanged(firebaseAuth, (user) => {
     if (user && user.displayName) {
       if (browser) {
@@ -48,7 +56,6 @@
           goto("/");
         }
       }
-
       userAuthState = true;
       currentUserInformation = user.toJSON();
       const compInfoRef = ref(firebaseDatabase, `users/${user.uid}`);
@@ -71,6 +78,27 @@
     }
   });
 
+  export const saveChangesOnSettings = function(inst) {
+    if(userAuthState) {
+      const userInfoRef = ref(firebaseDatabase, `users/${currentUserInformation.uid}`)
+      onValue(userInfoRef, (userInformation)=>{
+        let old_inst = userInformation.val().institution;
+        if (old_inst==inst) {
+          //do nothing since they are the same
+        } else {
+          set(ref(firebaseDatabase,`users/${currentUserInformation.uid}`), {
+            elo: userInformation.val().elo,
+            uid: userInformation.val().uid,
+            username: userInformation.val().username,
+            institution: inst
+          });
+        }
+      })
+    } 
+    
+  }
+
+  //Sign in function
   export const signIn = function (email, password) {
     authErrorState = "";
     if (!(email && password)) {
@@ -93,6 +121,13 @@
       });
   };
 
+  export const sendVerificationEmail = function() {
+    if(currentUserInformation!=undefined&&firebaseAuth.currentUser!=undefined) {
+      sendEmailVerification(firebaseAuth.currentUser)
+    }
+  }
+
+  //SignUp function uses a cloud function to prevent manipulation of regex
   export const signUp = function (username, email, password) {
     authErrorState = "";
     if (!(username && email && password)) {
@@ -132,6 +167,7 @@
         } else if (code == "ok") {
           signInWithEmailAndPassword(firebaseAuth, email, password).then(
             (user) => {
+              sendEmailVerification();
               if (browser) {
                 goto("/");
               }

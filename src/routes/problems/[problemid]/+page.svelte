@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <Navigation />
+            <Navigation displayname={currentUserInformation.displayName}/>
         {/if}
     {/key}
 {/if}

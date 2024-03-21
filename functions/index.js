@@ -5,7 +5,7 @@ const logger = require("firebase-functions/logger");
 
 const { initializeApp } = require("firebase-admin/app");
 const { getDatabase, set, ref, child, get, onValue } = require("firebase-admin/database")
-const { getAuth, createUserWithEmailAndPassword, updateProfile } = require("firebase-admin/auth")
+const { getAuth, createUserWithEmailAndPassword, updateProfile, generateEmailVerificationLink } = require("firebase-admin/auth")
 
 
 const firebaseConfig = {
@@ -22,6 +22,12 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig)
 const firebaseAuth = getAuth(firebaseApp);
 const firebaseDatabase = getDatabase(firebaseApp);
+
+exports.sendEmailVerificationLink = onRequest({cors:true},(request,response)=>{
+    const Res = request.body;
+    const email = Res.body_email;
+    
+})
 
 
 exports.createAccount = onRequest({ cors: true }, (request, response) => {
@@ -53,7 +59,8 @@ exports.createAccount = onRequest({ cors: true }, (request, response) => {
                             username: username,
                             uid: user.uid,
                             elo: 0,
-                            solved_problems: {}
+                            solved_problems: {},
+                            institution: ""
                         }).then(() => {
                             response.send({ error_code: "ok" })
                         });

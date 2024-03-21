@@ -8,7 +8,7 @@
     import { goto } from "$app/navigation";
     const app = getApp();
     const auth = getAuth(app);
-
+    export let displayname;
     function logOut() {
         signOut(auth);
     }
@@ -25,12 +25,33 @@
         alt="The QuiteLean Icon"
         style="width:50px;height:50px"
         class="mt-2"
-        on:click={()=>{if(browser){goto('/')}}}
+        on:click={() => {
+            if (browser) {
+                goto("/");
+            }
+        }}
     />
     <p class="subsubtext">QuiteLean</p>
     <br />
-    <button class="btn" style="background-transparency:100%" on:click={()=>{if(browser){goto('/problems/')}}}>Problems</button>
-    <div 
+    <button
+        class="btn"
+        style="background-transparency:100%"
+        on:click={() => {
+            if (browser) {
+                goto(`/people/${displayname}`);
+            }
+        }}>Profile</button
+    >
+    <button
+        class="btn"
+        style="background-transparency:100%"
+        on:click={() => {
+            if (browser) {
+                goto("/problems/");
+            }
+        }}>Problems</button
+    >
+    <div
         class="btn-group dropend position-absolute bottom-0 start-50 translate-middle-x"
     >
         <input
@@ -42,8 +63,18 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
         />
-        
+
         <ul class="dropdown-menu">
+            <li>
+                <button
+                    class="btn btn-sm"
+                    on:click={() => {
+                        if (browser) {
+                            goto("/account/");
+                        }
+                    }}>Settings</button
+                >
+            </li>
             <li>
                 <button class="btn btn-sm" on:click={logOut}>Sign out</button>
             </li>
@@ -53,39 +84,68 @@
 
 <div
     class="container position-fixed bottom-0 border-top w-100 z-3 navbar-color"
-    style="height:50px;"
+    style="height:70px;"
     id="mobile-navbar"
 >
-    <input
-        type="image"
-        src={"/icon.png"}
-        alt="QuiteLean Symbol"
-        style="width:40px;height:40px;margin-top:10px;"
-        class="ms-1"
-        on:click={()=>{
-            if(browser) {
-                goto('/');
-            }
-        }}
-    />
+    <div class="hstack gap-3">
+        <input
+            type="image"
+            src={"/icon.png"}
+            alt="QuiteLean Symbol"
+            style="width:60px;height:60px;"
+            class="ms-1 my-auto"
+            on:click={() => {
+                if (browser) {
+                    goto("/");
+                }
+            }}
+        />
+    </div>
+
     <div class="dropup-center dropup position-absolute mb-1 bottom-0 end-0">
         <input
             type="image"
             src={"/list.svg"}
             alt="Menu icon"
             class="me-2"
-            style="margin-top:10px;height:25px;width:25px;"
+            style="margin-top:10px;height:45px;width:45px;"
             data-bs-toggle="dropdown"
             aria-expanded="false"
         />
         <ul class="dropdown-menu">
             <li>
-                <button class="btn btn-sm" on:click={()=>{if(browser){goto('/problems/')}}}>Problems</button>
+                <button
+                    class="btn btn-sm"
+                    on:click={() => {
+                        if (browser) {
+                            goto(`/people/${displayname}`);
+                        }
+                    }}>Profile</button
+                >
+            </li>
+            <li>
+                <button
+                    class="btn btn-sm"
+                    on:click={() => {
+                        if (browser) {
+                            goto("/problems/");
+                        }
+                    }}>Problems</button
+                >
+            </li>
+            <li>
+                <button
+                    class="btn btn-sm"
+                    on:click={() => {
+                        if (browser) {
+                            goto("/account/");
+                        }
+                    }}>Settings</button
+                >
             </li>
             <li>
                 <button class="btn btn-sm" on:click={logOut}>Sign out</button>
             </li>
-            
         </ul>
     </div>
 </div>

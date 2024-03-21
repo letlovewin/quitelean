@@ -72,9 +72,9 @@
         {#if !userAuthState}
             <p>Hey, you're not supposed to be here!</p>
         {:else}
-            <Navigation />
+            <Navigation displayname={currentUserInformation.displayName}/>
             {#key competitiveUserInformation}
-                <div class="container text-center p-5 w-50">
+                <div class="container text-center p-5 w-75">
                     <h1>Problems</h1>
                     <p>
                         New problems are added ad hoc. If you want a problem to
