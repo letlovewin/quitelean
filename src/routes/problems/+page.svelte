@@ -45,9 +45,9 @@
                     props: {
                         rating: value.rating,
                         title: value.title,
-                        link: `/problems/${key}`
-                    }
-                })
+                        link: `/problems/${key}`,
+                    },
+                });
             }
         }
     });
@@ -72,24 +72,25 @@
         {#if !userAuthState}
             <p>Hey, you're not supposed to be here!</p>
         {:else}
-            <Navigation displayname={currentUserInformation.displayName}/>
+            <Navigation displayname={currentUserInformation.displayName} />
+
             {#key competitiveUserInformation}
-                <div class="container text-center p-5 w-75">
-                    <h1>Problems</h1>
-                    <p>
-                        New problems are added ad hoc. If you want a problem to
-                        be on here, email me at <a
-                            href="mailto:quitelean@gmail.com"
-                            >quitelean@gmail.com</a
-                        >.
-                    </p>
-                    {#await problemset then}
+                {#await problemset then}
+                    <div class="container text-center p-5 w-75">
+                        <h1>Problems</h1>
+                        <p>
+                            New problems are added ad hoc. If you want a problem
+                            to be on here, email me at <a
+                                href="mailto:quitelean@gmail.com"
+                                >quitelean@gmail.com</a
+                            >.
+                        </p>
                         <div
                             class="container border"
                             bind:this={problemSpace}
                         ></div>
-                    {/await}
-                </div>
+                    </div>
+                {/await}
             {/key}
         {/if}
     {/key}

@@ -74,8 +74,8 @@
 
 {#if userAuthState != undefined}
     {#key userAuthState}
-        {#if userAuthState == true}
-            <div class="container">
+        {#if statement!==""}
+            <div class="container w-75">
                 <div class="row p-5">
                     <div class="col-md">
                         <h3 class="text-center">
@@ -103,9 +103,10 @@
                     </div>
                 </div>
             </div>
-            <Navigation displayname={currentUserInformation.displayName}/>
+            
         {/if}
     {/key}
+    <Navigation displayname={currentUserInformation.displayName}/>
 {/if}
 
 <style>
