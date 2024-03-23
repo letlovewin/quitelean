@@ -65,10 +65,26 @@
         @Description Takes the code that was entered into the textarea and then sends it to the API for compiling.
 
     */
+    const submitCodeURL = "http://localhost:5173/quitelean/us-central1/compileCode";
 
-    function runCode() {
+    async function runCode() {
         console.log(currEditor);
-        
+        fetch(submitCodeURL, {
+      method: "POST",
+      body: JSON.stringify({
+        code: currEditor
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((code) => {
+        return code.json();
+      })
+      .then((Res) => {
+        let code = Res.error_code;
+        console.log(code);
+      });
     }
 </script>
 

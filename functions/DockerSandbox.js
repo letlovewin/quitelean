@@ -29,6 +29,5 @@ Sandbox.prototype.prepare = function (success) {
     let exec = require('child_process').exec;
     let fs = require('fs');
     let sandbox = this;
-
-    exec(`docker run -v ${this.path}${this.folder} leanvj`)
+    exec(`docker run -v ${this.path}${this.folder}:/temp/ leanvj`)
 }

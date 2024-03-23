@@ -108,13 +108,5 @@ exports.createAccount = onRequest({ cors: true }, (request, response) => {
 exports.compileCode = onRequest({ cors: true }, (request, response) => {
     const Res = request.body;
     const code = Res.code;
-
-    const folder = `temp/${random(10)}`;
-    const path = `${__dirname}/`;
-    const vm_name = 'virtual_machine';
-    const timeout_value = 20;
-
-    
-    
-
+    response.send({error_code:"poopee"})
 })
