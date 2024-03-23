@@ -1,7 +1,6 @@
 <svelte:options accessors={true} />
 
 <script>
-    import "../global.css";
     import Auth from "../Auth.svelte";
     import Navigation from "../Navigation.svelte";
     import ProblemRow from "./ProblemRow.svelte";

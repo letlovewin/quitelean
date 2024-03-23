@@ -5,11 +5,8 @@
         This is the .svelte file for the settings panel the users see. Currently, one can only change their institution, not their username. They have to verify their email before they can interact with anything.
 
     */
-    import "../global.css";
     import Auth from "../Auth.svelte";
     import Navigation from "../Navigation.svelte";
-    import { browser } from "$app/environment";
-    import { goto } from "$app/navigation";
     let webAppAuthComponent,
         webAppTitleState = "QuiteLean",
         currentUserInformation,

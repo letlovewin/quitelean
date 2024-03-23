@@ -35,6 +35,9 @@
     authErrorState = "",
     userAuthState,
     competitiveUserInformation = { elo: "NILL" };
+
+  const createAccountUrl = "https://createaccount-q3az2gk4sa-uc.a.run.app";
+
   //Do all of the heavy lifting in this component and export it to whatever page it might be used in.
   if (getApps().length === 0) {
     firebaseApp = initializeApp(firebaseConfig);
@@ -134,7 +137,7 @@
       authErrorState = "Please fill all fields";
       return;
     }
-    fetch("https://createaccount-q3az2gk4sa-uc.a.run.app", {
+    fetch(createAccountUrl, {
       method: "POST",
       body: JSON.stringify({
         body_username: username,

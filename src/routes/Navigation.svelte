@@ -51,6 +51,15 @@
             }
         }}>Problems</button
     >
+    <button
+        class="btn"
+        style="background-transparency:100%"
+        on:click={() => {
+            if (browser) {
+                goto("/faq/");
+            }
+        }}>FAQ</button
+    >
     <div
         class="btn-group dropend position-absolute bottom-0 start-50 translate-middle-x"
     >
@@ -113,6 +122,16 @@
             aria-expanded="false"
         />
         <ul class="dropdown-menu">
+            <li>
+                <button
+                    class="btn btn-sm"
+                    on:click={() => {
+                        if (browser) {
+                            goto("/faq/");
+                        }
+                    }}>FAQ</button
+                >
+            </li>
             <li>
                 <button
                     class="btn btn-sm"

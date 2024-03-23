@@ -1,4 +1,9 @@
 <script>
+    /*
+        @File: +page.svelte for people/[uid]
+        @Author: Gray 
+
+    */
     import { initializeApp, getApp, getApps } from "firebase/app";
     import { getDatabase, ref, get, child, onValue } from "firebase/database";
     import { goto } from "$app/navigation";
@@ -12,8 +17,7 @@
         userAuthState,
         signUp,
         signIn,
-        authErrorState,
-        currEditor;
+        authErrorState;
     const firebaseConfig = {
         apiKey: "AIzaSyCpZKwjZq81wfNVPC2K6PqbGEL1hnP65HY",
         authDomain: "quitelean.firebaseapp.com",
@@ -32,12 +36,12 @@
 
     const database = getDatabase(firebaseApp);
     export let data;
-    let pid = data.information.title;
+    let username = data.information.username;
     let display = "";
     let institution = "";
     let rating = 0;
 
-    onValue(ref(database, `/usernames/${pid}`), (uidSnapshot) => {
+    onValue(ref(database, `/usernames/${username}`), (uidSnapshot) => {
         if (uidSnapshot.exists()) {
             onValue(ref(database,`/users/${uidSnapshot.val().uid}`),(trueUserData)=>{
                 display = trueUserData.val().username;

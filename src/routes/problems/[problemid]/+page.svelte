@@ -36,6 +36,7 @@
     let statement = "";
     let title = "";
     let rating = 0;
+
     get(child(ref(database), `/problems/`)).then((snapshot) => {
         if (snapshot.exists()) {
             if (snapshot.val()[pid] !== "undefined") {
@@ -56,6 +57,14 @@
             }
         }
     });
+
+    /*
+
+        @Function runCode
+        @Params none
+        @Description Takes the code that was entered into the textarea and then sends it to the API for compiling.
+
+    */
 
     function runCode() {
         console.log(currEditor);
@@ -79,14 +88,16 @@
 
 {#if userAuthState != undefined}
     {#key userAuthState}
-        {#if statement!==""}
+        {#if statement !== ""}
             <div class="container w-75">
                 <div class="row p-5">
                     <div class="col-md">
                         <h3 class="text-center">
                             <strong>{@html title}</strong>
                         </h3>
-                        <p class="bg-success text-center rounded-pill">Rating: {rating}</p>
+                        <p class="bg-success text-center rounded-pill">
+                            Rating: {rating}
+                        </p>
                         <hr />
                         <p>
                             {@html statement}
@@ -103,16 +114,16 @@
                                 bind:value={currEditor}
                             ></textarea>
                         </div>
-                        <button class="btn btn-primary rounded-pill"
-                            >Submit</button
+                        <button
+                            class="btn btn-primary rounded-pill"
+                            on:click={runCode}>Submit</button
                         >
                     </div>
                 </div>
             </div>
-            
         {/if}
     {/key}
-    <Navigation displayname={currentUserInformation.displayName}/>
+    <Navigation displayname={currentUserInformation.displayName} />
 {/if}
 
 <style>
