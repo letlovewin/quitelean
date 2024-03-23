@@ -130,7 +130,7 @@
   //SignUp function uses a cloud function to prevent manipulation of regex
   export const signUp = function (username, email, password) {
     authErrorState = "";
-    if (!(username && email && password)) {
+    if (username===""||email===""||password==="") {
       authErrorState = "Please fill all fields";
       return;
     }

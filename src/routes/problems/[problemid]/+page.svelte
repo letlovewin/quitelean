@@ -56,6 +56,11 @@
             }
         }
     });
+
+    function runCode() {
+        console.log(currEditor);
+        
+    }
 </script>
 
 <svelte:head>
@@ -95,6 +100,7 @@
                                 autocapitalize="false"
                                 autocorrect="false"
                                 rows="15"
+                                bind:value={currEditor}
                             ></textarea>
                         </div>
                         <button class="btn btn-primary rounded-pill"

@@ -51,6 +51,15 @@
                             placeholder="Username (choose wisely!)"
                             aria-label="Username (choose wisely!)"
                             bind:this={usernameInputField}
+                            on:keydown={(key) => {
+                                if (key.code == "Enter") {
+                                    signUp(
+                                        usernameInputField.value,
+                                        emailInputField.value,
+                                        passwordInputField.value,
+                                    );
+                                }
+                            }}
                         />
                     </div>
                     <div class="input-group mb-3">
@@ -60,6 +69,15 @@
                             placeholder="Email"
                             aria-label="Email"
                             bind:this={emailInputField}
+                            on:keydown={(key) => {
+                                if (key.code == "Enter") {
+                                    signUp(
+                                        usernameInputField.value,
+                                        emailInputField.value,
+                                        passwordInputField.value,
+                                    );
+                                }
+                            }}
                         />
                     </div>
                     <div class="input-group mb-3">

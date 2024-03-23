@@ -7,8 +7,6 @@
     import ProblemRow from "./ProblemRow.svelte";
     import { initializeApp, getApp, getApps } from "firebase/app";
     import { getDatabase, ref, get, child } from "firebase/database";
-    import { browser } from "$app/environment";
-    import { goto } from "$app/navigation";
     let webAppAuthComponent,
         webAppTitleState = "QuiteLean",
         currentUserInformation,
