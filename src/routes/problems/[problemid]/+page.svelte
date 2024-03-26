@@ -65,26 +65,27 @@
         @Description Takes the code that was entered into the textarea and then sends it to the API for compiling.
 
     */
-    const submitCodeURL = "http://localhost:5173/quitelean/us-central1/compileCode";
+    const submitCodeURL =
+        "https://curly-engine-5j67v69j74524xv6-5001.app.github.dev/quitelean/us-central1/compileCode";
 
     async function runCode() {
         console.log(currEditor);
         fetch(submitCodeURL, {
-      method: "POST",
-      body: JSON.stringify({
-        code: currEditor
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((code) => {
-        return code.json();
-      })
-      .then((Res) => {
-        let code = Res.error_code;
-        console.log(code);
-      });
+            method: "POST",
+            body: JSON.stringify({
+                body_code: currEditor,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            },
+        })
+            .then((code) => {
+                return code.json();
+            })
+            .then((Res) => {
+                let code = Res.error_code;
+                console.log(code);
+            });
     }
 </script>
 
@@ -132,7 +133,7 @@
                         </div>
                         <button
                             class="btn btn-primary rounded-pill"
-                            on:click={runCode}>Submit</button
+                            on:click={()=>{runCode();}}>Submit</button
                         >
                     </div>
                 </div>

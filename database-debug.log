@@ -1,0 +1,4 @@
+03:26:18.837 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+03:26:19.227 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+03:26:28.578 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - quitelean-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 221ms, init: 0ms
+03:26:28.652 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace quitelean-default-rtdb status Active to Active

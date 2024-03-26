@@ -1,0 +1,908 @@
+[debug] [2024-03-26T03:25:59.496Z] ----------------------------------------------------------------------
+[debug] [2024-03-26T03:25:59.498Z] Command:       /usr/local/share/nvm/versions/node/v20.11.1/bin/node /home/codespace/nvm/current/bin/firebase emulators:start
+[debug] [2024-03-26T03:25:59.498Z] CLI Version:   13.5.2
+[debug] [2024-03-26T03:25:59.498Z] Platform:      linux
+[debug] [2024-03-26T03:25:59.498Z] Node Version:  v20.11.1
+[debug] [2024-03-26T03:25:59.498Z] Time:          Tue Mar 26 2024 03:25:59 GMT+0000 (Coordinated Universal Time)
+[debug] [2024-03-26T03:25:59.499Z] Env Overrides: GITHUB_API_URL
+[debug] [2024-03-26T03:25:59.499Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-26T03:25:59.610Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-26T03:25:59.610Z] > authorizing via signed-in user (portughalam@gmail.com)
+[debug] [2024-03-26T03:26:00.514Z] openjdk version "21.0.2" 2024-01-16 LTS
+
+[debug] [2024-03-26T03:26:00.517Z] OpenJDK Runtime Environment Microsoft-8905927 (build 21.0.2+13-LTS)
+OpenJDK 64-Bit Server VM Microsoft-8905927 (build 21.0.2+13-LTS, mixed mode, sharing)
+
+[debug] [2024-03-26T03:26:00.525Z] Parsed Java major version: 21
+[info] i  emulators: Starting emulators: functions, database, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, database, hosting"}}
+[debug] [2024-03-26T03:26:00.534Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-26T03:26:00.534Z] [database] Database Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-26T03:26:00.534Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-26T03:26:00.534Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-26T03:26:00.537Z] [hub] writing locator at /tmp/hub-quitelean.json
+[debug] [2024-03-26T03:26:00.543Z] > refreshing access token with scopes: []
+[debug] [2024-03-26T03:26:00.544Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-03-26T03:26:00.544Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-26T03:26:00.689Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-03-26T03:26:00.689Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-26T03:26:00.719Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quitelean [none]
+[debug] [2024-03-26T03:26:01.057Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quitelean 200
+[debug] [2024-03-26T03:26:01.057Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quitelean {"projectId":"quitelean","projectNumber":"434611625957","displayName":"quitelean","name":"projects/quitelean","resources":{"hostingSite":"quitelean","realtimeDatabaseInstance":"quitelean-default-rtdb","storageBucket":"quitelean.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_af99654d-e654-4c2c-b812-d6dc9949e143"}
+[debug] [2024-03-26T03:26:05.113Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/quitelean/sites pageToken=&pageSize=10
+[debug] [2024-03-26T03:26:05.654Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/quitelean/sites 200
+[debug] [2024-03-26T03:26:05.654Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/quitelean/sites {"sites":[{"name":"projects/quitelean/sites/quitelean","defaultUrl":"https://quitelean.web.app","appId":"1:434611625957:web:fbea8cbf3b58525ac6190c","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-26T03:26:05.655Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:434611625957:web:fbea8cbf3b58525ac6190c/config [none]
+[debug] [2024-03-26T03:26:06.104Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:434611625957:web:fbea8cbf3b58525ac6190c/config 200
+[debug] [2024-03-26T03:26:06.105Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:434611625957:web:fbea8cbf3b58525ac6190c/config {"projectId":"quitelean","appId":"1:434611625957:web:fbea8cbf3b58525ac6190c","databaseURL":"https://quitelean-default-rtdb.firebaseio.com","storageBucket":"quitelean.appspot.com","locationId":"us-central","apiKey":"AIzaSyCpZKwjZq81wfNVPC2K6PqbGEL1hnP65HY","authDomain":"quitelean.firebaseapp.com","messagingSenderId":"434611625957","measurementId":"G-FPX0STF405"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-03-26T03:26:15.048Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-west1"
+      },
+      "site": "quitelean",
+      "rewrites": [],
+      "redirects": [],
+      "headers": [
+        {
+          "source": "**/*.[jt]s",
+          "headers": [
+            {
+              "key": "Set-Cookie",
+              "value": "__FIREBASE_DEFAULTS__=eyJlbXVsYXRvckhvc3RzIjp7ImRhdGFiYXNlIjoiMTI3LjAuMC4xOjkwMDAifSwiY29uZmlnIjp7InByb2plY3RJZCI6InF1aXRlbGVhbiIsImFwcElkIjoiMTo0MzQ2MTE2MjU5NTc6d2ViOmZiZWE4Y2JmM2I1ODUyNWFjNjE5MGMiLCJkYXRhYmFzZVVSTCI6Imh0dHBzOi8vcXVpdGVsZWFuLWRlZmF1bHQtcnRkYi5maXJlYmFzZWlvLmNvbSIsInN0b3JhZ2VCdWNrZXQiOiJxdWl0ZWxlYW4uYXBwc3BvdC5jb20iLCJsb2NhdGlvbklkIjoidXMtY2VudHJhbCIsImFwaUtleSI6IkFJemFTeUNwWkt3alpxODF3Zk5WUEMySzZQcWJHRUwxaG5QNjVIWSIsImF1dGhEb21haW4iOiJxdWl0ZWxlYW4uZmlyZWJhc2VhcHAuY29tIiwibWVzc2FnaW5nU2VuZGVySWQiOiI0MzQ2MTE2MjU5NTciLCJtZWFzdXJlbWVudElkIjoiRy1GUFgwU1RGNDA1In19; SameSite=Strict; Expires=2026-02-18T14:06:15.047Z; Path=/;"
+            }
+          ]
+        }
+      ],
+      "cleanUrls": true,
+      "public": ".firebase/quitelean/hosting",
+      "webFramework": "svelekit"
+    }
+  ],
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
+    }
+  ]
+}
+[debug] [2024-03-26T03:26:15.049Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-26T03:26:15.050Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-26T03:26:15.051Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, pubsub, storage\u001b[22m"}}
+[debug] [2024-03-26T03:26:15.054Z] defaultcredentials: writing to file /home/codespace/.config/firebase/portughalam_gmail_com_application_default_credentials.json
+[debug] [2024-03-26T03:26:15.063Z] Setting GAC to /home/codespace/.config/firebase/portughalam_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/codespace/.config/firebase/portughalam_gmail_com_application_default_credentials.json"}}
+[debug] [2024-03-26T03:26:15.064Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quitelean/adminSdkConfig [none]
+[debug] [2024-03-26T03:26:15.526Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quitelean/adminSdkConfig 200
+[debug] [2024-03-26T03:26:15.526Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quitelean/adminSdkConfig {"projectId":"quitelean","databaseURL":"https://quitelean-default-rtdb.firebaseio.com","storageBucket":"quitelean.appspot.com","locationId":"us-central"}
+[debug] [2024-03-26T03:26:15.550Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quitelean [none]
+[debug] [2024-03-26T03:26:15.708Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quitelean 200
+[debug] [2024-03-26T03:26:15.708Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quitelean {"projectId":"quitelean","projectNumber":"434611625957","displayName":"quitelean","name":"projects/quitelean","resources":{"hostingSite":"quitelean","realtimeDatabaseInstance":"quitelean-default-rtdb","storageBucket":"quitelean.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_af99654d-e654-4c2c-b812-d6dc9949e143"}
+[debug] [2024-03-26T03:26:15.709Z] database rules config:  [{"instance":"quitelean-default-rtdb","rules":"/workspaces/quitelean/database.rules.json"}]
+[debug] [2024-03-26T03:26:15.713Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2024-03-26T03:26:15.713Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-03-26T03:26:15.713Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2024-03-26T03:26:15.713Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/home/codespace/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar","--host","127.0.0.1","--port",9000,"--single_project_mode","Warning","--functions_emulator_host","127.0.0.1","--functions_emulator_port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/home/codespace/.cache/firebase/emulators/firebase-database-emulator-v4.11.2.jar\",\"--host\",\"127.0.0.1\",\"--port\",9000,\"--single_project_mode\",\"Warning\",\"--functions_emulator_host\",\"127.0.0.1\",\"--functions_emulator_port\",5001],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2024-03-26T03:26:18.839Z] 03:26:18.837 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"03:26:18.837 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2024-03-26T03:26:19.228Z] 03:26:19.227 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"03:26:19.227 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000\n"}}
+[debug] [2024-03-26T03:26:19.493Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/quitelean/sites 
+[debug] [2024-03-26T03:26:19.928Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/quitelean/sites 200
+[debug] [2024-03-26T03:26:19.928Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/quitelean/sites {"sites":[{"name":"projects/quitelean/sites/quitelean","defaultUrl":"https://quitelean.web.app","appId":"1:434611625957:web:fbea8cbf3b58525ac6190c","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-26T03:26:19.928Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quitelean/webApps/1:434611625957:web:fbea8cbf3b58525ac6190c/config [none]
+[debug] [2024-03-26T03:26:20.356Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quitelean/webApps/1:434611625957:web:fbea8cbf3b58525ac6190c/config 200
+[debug] [2024-03-26T03:26:20.356Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quitelean/webApps/1:434611625957:web:fbea8cbf3b58525ac6190c/config {"projectId":"quitelean","appId":"1:434611625957:web:fbea8cbf3b58525ac6190c","databaseURL":"https://quitelean-default-rtdb.firebaseio.com","storageBucket":"quitelean.appspot.com","locationId":"us-central","apiKey":"AIzaSyCpZKwjZq81wfNVPC2K6PqbGEL1hnP65HY","authDomain":"quitelean.firebaseapp.com","messagingSenderId":"434611625957","measurementId":"G-FPX0STF405"}
+[info] i  hosting[quitelean]: Serving hosting files from: .firebase/quitelean/hosting {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1m.firebase/quitelean/hosting\u001b[22m"}}
+[info] ✔  hosting[quitelean]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-03-26T03:26:20.401Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-03-26T03:26:20.401Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-03-26T03:26:20.401Z] Starting Emulator UI with command {"binary":"node","args":["/home/codespace/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/codespace/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-03-26T03:26:20.548Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-03-26T03:26:20.548Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/workspaces/quitelean/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/workspaces/quitelean/functions\" for Cloud Functions..."}}
+[debug] [2024-03-26T03:26:20.666Z] Validating nodejs source
+[debug] [2024-03-26T03:26:21.272Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:26:21.272Z] Building nodejs source
+[debug] [2024-03-26T03:26:21.272Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:26:21.278Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:26:21.288Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8812
+
+[debug] [2024-03-26T03:26:23.105Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[info] ✔  functions[us-central1-createAccount]: http function initialized (http://127.0.0.1:5001/quitelean/us-central1/createAccount). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/quitelean/us-central1/createAccount)."}}
+[info] ✔  functions[us-central1-compileCode]: http function initialized (http://127.0.0.1:5001/quitelean/us-central1/compileCode). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/quitelean/us-central1/compileCode)."}}
+[debug] [2024-03-26T03:26:28.138Z] >>> [apiv2][query] PUT http://127.0.0.1:9000/.settings/rules.json ns=quitelean-default-rtdb
+[debug] [2024-03-26T03:26:28.138Z] >>> [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json "{\n  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */\n  \"rules\": {\n    \".read\": false,\n    \".write\": false\n  }\n}"
+[debug] [2024-03-26T03:26:28.579Z] 03:26:28.578 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - quitelean-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 221ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"03:26:28.578 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - quitelean-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 221ms, init: 0ms\n"}}
+[debug] [2024-03-26T03:26:28.652Z] 03:26:28.652 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace quitelean-default-rtdb status Active to Active
+ {"metadata":{"emulator":{"name":"database"},"message":"03:26:28.652 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace quitelean-default-rtdb status Active to Active\n"}}
+[debug] [2024-03-26T03:26:28.695Z] <<< [apiv2][status] PUT http://127.0.0.1:9000/.settings/rules.json 200
+[debug] [2024-03-26T03:26:28.695Z] <<< [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json {"status":"ok"}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Database  │ 127.0.0.1:9000 │ http://127.0.0.1:4000/database  │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ 127.0.0.1:5000 │ n/a                             │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2024-03-26T03:26:38.786Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[debug] [2024-03-26T03:26:39.788Z] Validating nodejs source
+[debug] [2024-03-26T03:26:40.484Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:26:40.484Z] Building nodejs source
+[debug] [2024-03-26T03:26:40.484Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:26:40.486Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:26:40.487Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8148
+
+[debug] [2024-03-26T03:26:40.973Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:26:41.450Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[debug] [2024-03-26T03:26:42.451Z] Validating nodejs source
+[debug] [2024-03-26T03:26:42.968Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:26:42.968Z] Building nodejs source
+[debug] [2024-03-26T03:26:42.969Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:26:42.969Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:26:42.970Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[debug] [2024-03-26T03:26:42.979Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[info] Serving at port 8860
+
+[debug] [2024-03-26T03:26:43.382Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:26:43.979Z] Validating nodejs source
+[debug] [2024-03-26T03:26:44.510Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:26:44.510Z] Building nodejs source
+[debug] [2024-03-26T03:26:44.510Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:26:44.511Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:26:44.512Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8277
+
+[debug] [2024-03-26T03:26:44.867Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:27:00.947Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[debug] [2024-03-26T03:27:01.949Z] Validating nodejs source
+[debug] [2024-03-26T03:27:02.469Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:27:02.469Z] Building nodejs source
+[debug] [2024-03-26T03:27:02.469Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:27:02.472Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:27:02.473Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8531
+
+[debug] [2024-03-26T03:27:02.833Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:27:08.382Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[debug] [2024-03-26T03:27:09.382Z] Validating nodejs source
+[debug] [2024-03-26T03:27:09.967Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:27:09.967Z] Building nodejs source
+[debug] [2024-03-26T03:27:09.968Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:27:09.968Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:27:09.969Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8526
+
+[debug] [2024-03-26T03:27:10.389Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:27:10.890Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[debug] [2024-03-26T03:27:11.890Z] Validating nodejs source
+[debug] [2024-03-26T03:27:12.376Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:27:12.376Z] Building nodejs source
+[debug] [2024-03-26T03:27:12.376Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:27:12.377Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:27:12.378Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8043
+
+[debug] [2024-03-26T03:27:12.725Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:29:36.457Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[debug] [2024-03-26T03:29:37.457Z] Validating nodejs source
+[debug] [2024-03-26T03:29:38.103Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:29:38.104Z] Building nodejs source
+[debug] [2024-03-26T03:29:38.104Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:29:38.105Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:29:38.108Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8923
+
+[debug] [2024-03-26T03:29:38.494Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:29:39.861Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[debug] [2024-03-26T03:29:40.861Z] Validating nodejs source
+[debug] [2024-03-26T03:29:41.467Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:29:41.468Z] Building nodejs source
+[debug] [2024-03-26T03:29:41.468Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:29:41.468Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:29:41.472Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8282
+
+[debug] [2024-03-26T03:29:41.866Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:29:41.896Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[debug] [2024-03-26T03:29:42.897Z] Validating nodejs source
+[debug] [2024-03-26T03:29:43.437Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:29:43.437Z] Building nodejs source
+[debug] [2024-03-26T03:29:43.437Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:29:43.438Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:29:43.440Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[info] Serving at port 8359
+
+[debug] [2024-03-26T03:29:43.780Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:29:45.945Z] File /workspaces/quitelean/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/index.js changed, reloading triggers"}}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:29:46.945Z] Validating nodejs source
+[debug] [2024-03-26T03:29:47.444Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:29:47.444Z] Building nodejs source
+[debug] [2024-03-26T03:29:47.444Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:29:47.445Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:29:47.446Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8018
+
+[debug] [2024-03-26T03:29:47.820Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:32:46.979Z] File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers"}}
+[debug] [2024-03-26T03:32:47.979Z] Validating nodejs source
+[debug] [2024-03-26T03:32:48.531Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:32:48.531Z] Building nodejs source
+[debug] [2024-03-26T03:32:48.532Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:32:48.534Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:32:48.535Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8093
+
+[debug] [2024-03-26T03:32:48.985Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:33:29.832Z] File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers"}}
+[debug] [2024-03-26T03:33:30.834Z] Validating nodejs source
+[debug] [2024-03-26T03:33:32.629Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:33:32.629Z] Building nodejs source
+[debug] [2024-03-26T03:33:32.630Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:33:32.638Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:33:32.638Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[debug] [2024-03-26T03:33:32.652Z] File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers"}}
+[info] Serving at port 8024
+
+[debug] [2024-03-26T03:33:33.162Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:33:33.653Z] Validating nodejs source
+[debug] [2024-03-26T03:33:34.273Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:33:34.274Z] Building nodejs source
+[debug] [2024-03-26T03:33:34.274Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:33:34.275Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:33:34.275Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8071
+
+[debug] [2024-03-26T03:33:34.657Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:33:36.392Z] File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers"}}
+[debug] [2024-03-26T03:33:37.393Z] Validating nodejs source
+[debug] [2024-03-26T03:33:37.901Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:33:37.901Z] Building nodejs source
+[debug] [2024-03-26T03:33:37.901Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:33:37.902Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:33:37.903Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8275
+
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:33:38.314Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:33:48.090Z] File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers"}}
+[debug] [2024-03-26T03:33:49.091Z] Validating nodejs source
+[debug] [2024-03-26T03:33:49.591Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:33:49.592Z] Building nodejs source
+[debug] [2024-03-26T03:33:49.592Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:33:49.592Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:33:49.593Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8111
+
+[debug] [2024-03-26T03:33:50.110Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:34:00.543Z] File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers"}}
+[debug] [2024-03-26T03:34:01.543Z] Validating nodejs source
+[debug] [2024-03-26T03:34:02.176Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:34:02.176Z] Building nodejs source
+[debug] [2024-03-26T03:34:02.176Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:34:02.177Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:34:02.178Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8178
+
+[debug] [2024-03-26T03:34:02.611Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:34:23.417Z] File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers"}}
+[debug] [2024-03-26T03:34:24.419Z] Validating nodejs source
+[debug] [2024-03-26T03:34:24.970Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:34:24.970Z] Building nodejs source
+[debug] [2024-03-26T03:34:24.970Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:34:24.971Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:34:24.972Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[debug] [2024-03-26T03:34:24.977Z] File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers"}}
+[info] Serving at port 8628
+
+[debug] [2024-03-26T03:34:25.358Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:34:25.979Z] Validating nodejs source
+[debug] [2024-03-26T03:34:26.526Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:34:26.526Z] Building nodejs source
+[debug] [2024-03-26T03:34:26.526Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:34:26.529Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:34:26.530Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8825
+
+[debug] [2024-03-26T03:34:26.833Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2024-03-26T03:34:28.298Z] File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/Dockerfile changed, reloading triggers"}}
+[debug] [2024-03-26T03:34:29.298Z] Validating nodejs source
+[debug] [2024-03-26T03:34:29.842Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:34:29.843Z] Building nodejs source
+[debug] [2024-03-26T03:34:29.843Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:34:29.843Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:34:29.845Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8431
+
+[debug] [2024-03-26T03:34:30.252Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:34:43.081Z] File /workspaces/quitelean/functions/CompileAPI/run.sh changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/run.sh changed, reloading triggers"}}
+[debug] [2024-03-26T03:34:44.082Z] Validating nodejs source
+[debug] [2024-03-26T03:34:44.672Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:34:44.672Z] Building nodejs source
+[debug] [2024-03-26T03:34:44.672Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:34:44.681Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:34:44.682Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8932
+
+[debug] [2024-03-26T03:34:45.030Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}
+[debug] [2024-03-26T03:34:50.415Z] File /workspaces/quitelean/functions/CompileAPI/run.sh changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /workspaces/quitelean/functions/CompileAPI/run.sh changed, reloading triggers"}}
+[debug] [2024-03-26T03:34:51.416Z] Validating nodejs source
+[debug] [2024-03-26T03:34:51.980Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-26T03:34:51.980Z] Building nodejs source
+[debug] [2024-03-26T03:34:51.980Z] Failed to find version of module node: reached end of search path /workspaces/quitelean/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2024-03-26T03:34:51.981Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-26T03:34:51.984Z] Found firebase-functions binary at '/workspaces/quitelean/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8120
+
+[debug] [2024-03-26T03:34:52.387Z] Got response from /__/functions.yaml {"endpoints":{"createAccount":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createAccount"},"compileCode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"compileCode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: createAccount, compileCode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createAccount, compileCode."}}

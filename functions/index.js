@@ -100,13 +100,21 @@ exports.createAccount = onRequest({ cors: true }, (request, response) => {
 })
 
 /*
-    @Function compileCode
-    @Description Takes code from the problems/[problemid] page and sends it to the docker so it can be compiled.
-    Took A LOT of inspiration from https://blog.remoteinterview.io/how-we-used-docker-to-compile-and-run-untrusted-code-2fafbffe2ad5
+    Beginning of code sandboxing logic
+    A POST request is sent to the compileCode API and it writes the code to a new file in its temp storage. Then it mounts a folder to a docker container and runs the code in there.
+
 */
 
 exports.compileCode = onRequest({ cors: true }, (request, response) => {
+    const exec = require('child_process').exec;
+    const fs = require('fs');
     const Res = request.body;
-    const code = Res.code;
-    response.send({error_code:"poopee"})
+    const code = Res.body_code;
+    const file_name = random(10);
+    fs.writeFile(`/tmp/${file_name}.lean/`, code, (err)=>{
+        response.send({error_code:"Unknown error occurred"});
+    })
+    logger.info(code);
+    //... then clean up the /tmp/ folder ...
+    fs.rmSync(`/tmp/`, { recursive: true, force: true });
 })
